@@ -23,3 +23,10 @@ void agregarPila(Nodo *&pila, char n){
     nuevo_nodo->siguiente = pila;
     pila = nuevo_nodo;
 }
+
+void sacarPila(Nodo *&pila, char &n){
+    Nodo *aux = pila;
+    n = aux->dato;
+    pila = aux->siguiente;
+    delete(aux);
+}
