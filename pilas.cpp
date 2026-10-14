@@ -16,3 +16,10 @@ void imprimirPila(Nodo *pila){
     }
     cout<<endl;
 }
+
+void agregarPila(Nodo *&pila, char n){
+    Nodo *nuevo_nodo = new Nodo();
+    nuevo_nodo->dato=n;
+    nuevo_nodo->siguiente = pila;
+    pila = nuevo_nodo;
+}
