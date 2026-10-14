@@ -30,3 +30,16 @@ void sacarPila(Nodo *&pila, char &n){
     pila = aux->siguiente;
     delete(aux);
 }
+int main(){
+    void agregarPila(Nodo *&, char );
+    void sacarPila(Nodo *&, char &);
+    string cadena;
+    Nodo *pila=NULL;
+
+    cout<<"Digite una cadena de caracteres: ";
+    getline(cin, cadena);
+    for(int i=0; i<cadena.length(); i++){
+        agregarPila(pila,cadena[i]);
+    }
+    imprimirPila(pila);
+}
