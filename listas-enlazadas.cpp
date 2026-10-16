@@ -83,4 +83,3 @@ void eliminarNodo(Nodo *&lista,int n){
         }
     }
 }
-
