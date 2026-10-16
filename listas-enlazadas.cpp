@@ -51,3 +51,36 @@ void insertarLista(Nodo *&lista, int n){
 
     nuevo_nodo->siguiente = aux1;
 }
+
+void eliminarLista(Nodo *&lista,int &n){
+    Nodo *aux = lista;
+    n = aux->dato;
+    lista = aux->siguiente;
+    delete aux;
+}
+
+void eliminarNodo(Nodo *&lista,int n){
+    if(lista != NULL){
+        Nodo *aux_borrar;
+        Nodo *anterior = NULL;
+        aux_borrar = lista;
+
+        while((aux_borrar != NULL) && (aux_borrar->dato != n)){
+            anterior = aux_borrar;
+            aux_borrar = aux_borrar->siguiente;
+        }
+
+        if(aux_borrar == NULL){
+            cout<<"El elemento no existe";
+        }
+        else if(anterior == NULL){
+            lista = lista->siguiente;
+            delete aux_borrar;
+        }
+        else{
+            anterior->siguiente = aux_borrar->siguiente;
+            delete aux_borrar;
+        }
+    }
+}
+
